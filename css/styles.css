@@ -2,16 +2,23 @@
 img{ 
    	width: 400px;
    }
-h1 { color: green;
+h1 { color: Orange;
+	font-family: 'Balthazar', serif;
+    letter-spacing: 4px	;
+    text-transform: uppercase;
+
+
+ 	}
+
+    p { line-height: 24px  
     }
 
-    #food {
-  background: Orange;
-}
+    h3{ color:#915430;
+    	font-family: 'Balthazar', serif;
+    	font-weight: bold;	}
 
-#course {
-  background: blue;
-}
+
+ 
 /* Show Grid */
 .showgrid {
 	background: url("../img/grid-bg.png") repeat-y;
