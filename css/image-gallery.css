@@ -1,0 +1,236 @@
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    background: url("../img/squared-metal.png");
+    text-align: center;
+    margin: 0 auto;
+    transition: all .25s;
+}
+nav {
+    background: #49557F;
+    min-width: 283px;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 10;
+    line-height: .6em;  /*5px*/
+    /*border-top: 12px solid ;*/
+    border-bottom: 12px solid ;
+    transition: all .2s;
+}
+nav img{
+    width: 177px;
+}
+nav li:nth-child(1n+2) a{
+    border: solid #70737F 11px;
+    border-radius: 50px;
+    padding: 22px 10px;
+}
+ul {
+    width: 100%;
+    margin: 3px auto;
+    padding: 0;
+    list-style: none;
+    transition: all 1s;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+h1, li {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 900;
+    font-size: 2em;
+}
+li{
+    display: flex;
+    margin: 2px 18px;
+    min-height: 71px;
+    vertical-align: middle;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 900;
+}
+li a{
+    font-style: normal;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    font-style: italic;
+}
+.images{
+    margin: 138px auto 60px auto;
+    width: 80%;
+    max-width: 1018px;
+    transition: all .25s;
+}
+/*///////////////////////////////////////////////////////////*/
+
+/* Styles the thumbnail */
+ a.lightbox img {
+    height: 20em;
+    border: 3px solid #000;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.7);
+    margin: 20px;
+}
+/* Styles the lightbox, removes it from sight and adds the fade-in transition */
+ .lightbox-target {
+    position: fixed;
+    margin-top: 6.0625em; /* 97/16 */
+    top: -100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .85);
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+    overflow: hidden;
+}
+/* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+ .lightbox-target img {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom: 0;
+    max-height: 0%;
+    max-width: 0%;
+    border: 3px solid #000;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, .3);
+    box-sizing: border-box;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+/* Styles the close link, adds the slide down transition */
+ a.lightbox-close {
+    display: block;
+    width:50px;
+    height:50px;
+    box-sizing: border-box;
+    background: white;
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    top: -80px;
+    left: 0;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+/* Provides part of the "X" to eliminate an image from the close link */
+ a.lightbox-close:before {
+    content:"";
+    display: block;
+    height: 30px;
+    width: 1px;
+    background: black;
+    position: absolute;
+    left: 26px;
+    top:10px;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+/* Provides part of the "X" to eliminate an image from the close link */
+ a.lightbox-close:after {
+    content:"";
+    display: block;
+    height: 30px;
+    width: 1px;
+    background: black;
+    position: absolute;
+    left: 26px;
+    top: 10px;
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+/* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
+ .lightbox-target:target {
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+.lightbox-target:target img {
+    max-height: 100%;
+    max-width: 100%;
+}
+.lightbox-target:target a.lightbox-close {
+    top: 0px;
+}
+
+/*////////////////////////////////////////////////////*/
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 859px){
+    body{
+        margin-top: 13em; /* 100/16 */
+    }
+    nav{
+        position: absolute;
+        z-index: 0;
+    }
+    nav li:nth-child(1n+2) a{
+        font-size: 26px;
+        padding: 10px 5px;
+    }
+    nav li{
+        min-height: 0px;
+    }
+    nav li a{
+        width: 35%;
+        text-align: center;
+        margin:0 auto;
+        min-width: 177px;
+    }
+    nav ul{
+        width: 75%;
+    }
+    .lightbox-target {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 583px){
+    nav ul{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 440px){
+    body {
+        margin-top: 19em; /* 100/16 */
+    }
+}
+

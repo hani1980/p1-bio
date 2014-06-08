@@ -1,29 +1,237 @@
-/* Your Website Styles */
-body{
-	background: url("../img/bg.png");
+*{
+    box-sizing: border-box;
+}
+html {
+    background: url("../img/cartographer.png");
+}
+.wrapper{
+    margin: 138px auto 60px auto;
+    width: 80%;
+    max-width: 788px;
+    min-width: 356px;
+    transition: all .25s;
+ }
+nav {
+    background: teal;
+    min-width: 283px;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 10;
+    line-height: .6em;  /*5px*/
+    /*border-top: 12px solid ;*/
+    border-bottom: 12px solid ;
+    transition: all .2s;
+}
+nav img{
+    width: 177px;
+}
+nav li:nth-child(1n+2) a{
+    border-radius: 50px;
+    padding: 22px 10px;
 }
 
-img{ 
-   	width: 400px;
-   }
-h1 { color: Orange;
-	font-family: 'Balthazar', serif;
-    letter-spacing: 4px	;
-    text-transform: uppercase;
+ul,
+li{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: flex;
+}
+ul{
+    width: 100%;
+    margin: 3px auto;
+    padding: 0;
+    list-style: none;
+    transition: all 1s;
+
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+
+li{
+    margin: 2px 18px;
+    min-height: 71px;
+    vertical-align: middle;
+    align-items: center;
+}
+li a{
+        font-style: normal;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    font-style: italic;
+}
+p {
+    text-indent:  2em;
+    font-family:  'Lato', sans-serif;
+    font-weight:  700;
+    line-height:  1.75em;
+    word-spacing: 0.188em;
+    font-size:    1.2em;
+    margin-right: 1.25em;
+}
+h1, h2, h3, li {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 900;
+}
+h1, li{
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.8em;
+}
+h3 {
+    font-size: 1.333em;
+}
+.welcome{
+    padding-right: 0px;
+}
+.container {
+    background: turquoise;
+    position: relative;
+    margin-top: 6.25em; /* 100/16 */
+    box-shadow: inset 0px 0px 50px 10px rgba(68, 68, 68, .8);
+}
+.content {
+    margin-top: 3.125em; /* 50/16 */
+}
+.center-content {
+    padding: .625em 4.625em 0.625em 4.625em; /* 10/16 */ /* 74/16 */
+}
+.headers{
+    font-variant: small-caps;
+}
+.Hani-face {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    border: solid #70737F 8px;
+    transition: all .25s;
+}
+.email:hover,
+.school-link:hover {
+    color: white;
+    text-decoration: underline;
+}
 
 
- 	}
+}
+.thanks {
+    text-indent: 0;
+    text-align: center;
+    padding-left: 2.1875em;
+    padding-right: 7em;
+    margin-bottom: 1em;
+}
+ .bottom-margin {
+    margin: 3.125em; /* 50/16 */
+}
 
-    p { line-height: 24px  
+.gif{
+    padding-left: 180px;
+}
+
+.gif-headers h3{
+    text-align: center;
+}
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 780px){
+    .Hani-face{
+        position: initial;
+        display: block;
+        margin: 0 auto;
+    }
+    .thanks{
+        padding: 0;
+        padding-bottom: 20px;
+    }
+    .welcome h2{
+        margin-top: -20px;
+    }
+    p{
+        line-height: 2em;
+        word-spacing: normal;
+    }
+    .content {
+        margin-top: 3.125em; /* 50/16 */
     }
 
-    h3{ color:#915430;
-    	font-family: 'Balthazar', serif;
-    	font-weight: bold;	}
-
-
- 
-/* Show Grid */
-.showgrid {
-	background: url("../img/grid-bg.png") repeat-y;
+    .center-content {
+        padding: 1em;
+    }
+    
 }
+
+@media screen and (max-width: 858px){
+    body{
+        margin-top: 13em; /* 100/16 */
+    }
+    nav{
+        position: absolute;
+    }
+    nav li:nth-child(1n+2) a{
+        font-size: 26px;
+        padding: 10px 5px;
+    }
+    nav li{
+        min-height: 0px;
+    }
+    nav li a{
+        width: 35%;
+        text-align: center;
+        margin:0 auto;
+        min-width: 177px;
+    }
+    nav ul{
+        width: 75%;
+    }
+    .gif{
+        padding-left: 112px;
+    }
+
+}
+@media screen and (max-width: 592px){
+    nav ul{
+        width: 100%;
+    }
+        .gif{
+        padding-left: 60px;
+    }
+}
+
+@media screen and (max-width: 440px){
+    body {
+        margin-top: 19em; /* 100/16 */
+    }
+    .container{
+        width: 100%;
+    }
+    .gif{
+        padding-left: 30px;
+    }
+}
+
+/*ALL COLORS*/
+
+/*
+#49557F
+#DFE6FF
+#93AAFF
+#70737F
+#7588CC
+*/
